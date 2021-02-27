@@ -1,4 +1,3 @@
-import 'materialize-css';
 import CenteredGrid from './CenteredGrid/CenteredGrid'
 
 function App() {
