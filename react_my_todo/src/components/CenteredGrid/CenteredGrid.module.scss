@@ -1,9 +1,13 @@
 .block {
-    width: 200px;
-    height: 200px;
-    border: 1px solid #fff;
-    margin: 0 auto;
+    max-width: 1200px;
+    min-height: 400px;
+    width: 100%;
+    box-shadow: 0 2px 10px 1px;
+    border-radius: 5px;
+    padding: 20px;
+    margin: 20px auto;
     background-color: #fff;
+
 
     &_text {
         color: red;
