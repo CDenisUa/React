@@ -1,9 +1,9 @@
-import CenteredGrid from './CenteredGrid/CenteredGrid'
+import HooksTodoContainer from './hooks-todo-container/HooksTodoContainer'
 
 function App() {
   return (
     <>
-      <CenteredGrid />
+      <HooksTodoContainer />
     </>
   );
 }
