@@ -19,3 +19,23 @@
         }
     }
 }
+
+.icon {
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+    margin-left: 20px;
+}
+
+.delete {
+    &:hover {
+        color: red;
+    }
+}
+
+.add {
+
+    :hover {
+        color: green;
+    }
+}
