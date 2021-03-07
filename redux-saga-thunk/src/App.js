@@ -1,19 +1,23 @@
 import React from 'react';
 import './App.css';
 import {connect} from 'react-redux';
+import { Counter } from './Counter';
 
 class App extends React.Component{
   render(){
     console.log(this.props)
     return(
-      <div className="container">
-        <h1>Redux app</h1>
-        <span className="counter">{this.props.counter}</span>
-        <div className="control">
-          <button onClick={this.props.addHandler}>+</button>
-          <button onClick={this.props.subHandler}>-</button>
-          <button onClick={this.props.addNumHendler}>+10</button>
+      <div className= 'wrapper'>
+        <div className="container">
+          <h1>Redux with classes</h1>
+          <span className="counter">{this.props.counter}</span>
+          <div className="control">
+            <button onClick={this.props.addHandler}>+</button>
+            <button onClick={this.props.subHandler}>-</button>
+            <button onClick={this.props.addNumHendler}>+10</button>
+          </div>
         </div>
+        <Counter />
       </div>
     )
   }
