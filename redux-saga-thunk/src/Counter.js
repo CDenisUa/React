@@ -8,16 +8,16 @@ export const Counter = () => {
     //useSelector - позволяет получить в компонент State
 
     const dispatch = useDispatch();
-    const counter = useSelector((state) => state.counter );
+    const counter = useSelector((state) => state.hookCounterReducer.counter );
 
     return(
         <div className="container">
           <h1>Redux with hooks</h1>
           <span className="counter">{counter}</span>
           <div className="control">
-            <button onClick={() => dispatch({type: 'ADD'})}>+</button>
-            <button onClick={() => dispatch({type: 'SUB'})}>-</button>
-            <button onClick={() => dispatch({type: 'ADD_NUM', payload: 10})}>+10</button>
+            <button onClick={() => dispatch({type: 'ADD_HOOK'})}>+</button>
+            <button onClick={() => dispatch({type: 'SUB_HOOK'})}>-</button>
+            <button onClick={() => dispatch({type: 'ADD_NUM_HOOK', payload: 10})}>+10</button>
           </div>
         </div>
     )

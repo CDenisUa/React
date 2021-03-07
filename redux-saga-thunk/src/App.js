@@ -24,12 +24,13 @@ class App extends React.Component{
 }
 
 const mapStateToProps = (state) => {
-  return {counter:state.counter}
+  return {
+    counter:state.classCounterReducer.counter,
+  }
 }
 
 const mapDispathToProps = (dispatch) => {
   return {
-
     addHandler: () => dispatch({type: 'ADD'}),
     subHandler: () => dispatch({type: 'SUB'}),
     addNumHendler: () => dispatch({type: 'ADD_NUM',payload: 10})
