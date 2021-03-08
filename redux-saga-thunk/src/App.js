@@ -1,40 +1,21 @@
 import React from 'react';
-import './App.css';
 import {connect} from 'react-redux';
-import { Counter } from './Counter';
+import './app.scss';
 
-class App extends React.Component{
-  render(){
-    console.log(this.props)
-    return(
-      <div className= 'wrapper'>
-        <div className="container">
-          <h1>Redux with classes</h1>
-          <span className="counter">{this.props.counter}</span>
-          <div className="control">
-            <button onClick={this.props.addHandler}>+</button>
-            <button onClick={this.props.subHandler}>-</button>
-            <button onClick={this.props.addNumHendler}>+10</button>
-          </div>
-        </div>
-        <Counter />
-      </div>
-    )
+class App extends React.Component {
+
+
+  render() {
+    return <h1>Class component App</h1>
   }
 }
 
 const mapStateToProps = (state) => {
-  return {
-    counter:state.classCounterReducer.counter,
-  }
+  return {}
 }
 
-const mapDispathToProps = (dispatch) => {
-  return {
-    addHandler: () => dispatch({type: 'ADD'}),
-    subHandler: () => dispatch({type: 'SUB'}),
-    addNumHendler: () => dispatch({type: 'ADD_NUM',payload: 10})
-  }
+const mapDispatchToProps = (dispatch) => {
+  return {}
 }
 
-export default connect(mapStateToProps,mapDispathToProps)(App);
+export default connect(mapStateToProps, mapDispatchToProps)(App);
