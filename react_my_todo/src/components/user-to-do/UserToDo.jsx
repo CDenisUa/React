@@ -1,4 +1,5 @@
 import { React, useState } from 'react';
+import { FaTimes, FaPen } from "react-icons/fa";
 import styles from './UserToDo.module.scss';
 
 const UserToDo = () => {
@@ -9,7 +10,6 @@ const UserToDo = () => {
         { id: 3, name: 'Прочитать книгу по JS', done: false },
         { id: 4, name: 'Выйти прогуляться', done: false }
     ]);
-    console.log(myTasks)
     return (
         <>
             <div className={styles.userAdd}>
@@ -46,15 +46,19 @@ const UserToDo = () => {
                     {myTasks.map(task => (
                         <li className={styles.todo} key={task.id}>
                             <span>{task.name}</span>
-                            <button
-                                onClick={() => setMytasks(
-                                    myTasks.filter(item => {
-                                        return item && item.id !== task.id
-                                    })
-                                )}
-                            >
-                                delete
-                            </button>
+                            <div>
+                                <FaPen
+                                    className={styles.icon}
+                                />
+                                <FaTimes
+                                    className={styles.icon}
+                                    onClick={() => setMytasks(
+                                        myTasks.filter(item => {
+                                            return item && item.id !== task.id
+                                        })
+                                    )}
+                                />
+                            </div>
                         </li>
                     ))}
                 </ul>
