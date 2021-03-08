@@ -1,12 +1,18 @@
 import React from 'react';
 import {connect} from 'react-redux';
 import './app.scss';
+import Layout from './components/layout/Layout'
+import { MainContext } from './context/MainContext';
 
 class App extends React.Component {
 
 
   render() {
-    return <h1>Class component App</h1>
+    return (
+      <MainContext.Provider value={{state: this.props}}>
+        <Layout />
+      </MainContext.Provider>
+    )
   }
 }
 
