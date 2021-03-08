@@ -34,8 +34,20 @@
 }
 
 .add {
+    width: 100px;
+}
 
-    :hover {
-        color: green;
+.todolist {
+    list-style: none;
+}
+
+.todo {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    list-style: none;
+
+    button {
+        margin-right: 20px;
     }
 }
