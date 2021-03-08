@@ -33,8 +33,8 @@ const UserToDo = () => {
                                     name: prevInputValue,
                                     done: false
                                 }
-                            ]
-                            )
+                            ]);
+                            setInputValue('');
                         }}
                     >
                         Add
