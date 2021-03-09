@@ -10,6 +10,18 @@ const UserToDo = () => {
         { id: 3, name: 'Прочитать книгу по JS', done: false },
         { id: 4, name: 'Выйти прогуляться', done: false }
     ]);
+
+    const addTodo = () => {
+        setMytasks([
+            ...myTasks,
+            {
+                id: Math.random(),
+                name: prevInputValue,
+                done: false
+            }
+        ]);
+        setInputValue('');
+    }
     return (
         <>
             <div className={styles.userAdd}>
@@ -17,25 +29,18 @@ const UserToDo = () => {
                     className={styles.input}
                     value={prevInputValue}
                     onChange={
-                        (e) => {
-                            setInputValue(e.target.value)
+                        (event) => {
+                            setInputValue(event.target.value)
                         }
                     }
+                    onKeyUp={(e) => {
+                        e.key === 'Enter' && addTodo();
+                    }}
                 />
                 <div>
                     <button
                         className='add'
-                        onClick={() => {
-                            setMytasks([
-                                ...myTasks,
-                                {
-                                    id: Math.random(),
-                                    name: prevInputValue,
-                                    done: false
-                                }
-                            ]);
-                            setInputValue('');
-                        }}
+                        onClick={addTodo}
                     >
                         Add
                     </button>
