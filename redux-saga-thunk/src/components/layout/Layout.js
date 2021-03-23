@@ -1,5 +1,4 @@
-import React from 'react'
-import './layout.scss'
+import './Layout.scss';
 import { Nav } from '../nav/Nav';
 import {Mask} from '../mask/Mask'
 
