@@ -12,6 +12,6 @@
 }
 
 .form-input label {
-    text-transform: uppercase;
+    text-transform: capitalize;
     font-family: Arial;
 }
