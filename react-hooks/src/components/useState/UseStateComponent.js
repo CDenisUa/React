@@ -6,7 +6,7 @@ export const UseStateComponent = () => {
     const [nameValue, setNameValue] = useState('');
     const [lastNameValue, setLastNameValue] = useState('');
     const [ageValue, setAgeValue] = useState(21);
-    const [elem, inc, dec, clear] = useCustomHookUseState(200,10)
+    const [elem, inc, dec, clear] = useCustomHookUseState(200,10);
 
     const clearForm = (event) => {
         event.preventDefault();
