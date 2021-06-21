@@ -19,6 +19,8 @@ export const UseLayoutEffect = (step) => {
                 case 'ArrowDown':
                     setTop(prev => prev + step);
                     break;
+                default:
+                    console.log('Default value')
             }
         };
 
