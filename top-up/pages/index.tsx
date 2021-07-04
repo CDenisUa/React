@@ -1,18 +1,21 @@
-import {Htag, Button, Text, Teg} from "../components";
+import {Htag, Button, Text, Teg, Rating} from "../components";
+import {useState} from "react";
 
 export default function Home(): JSX.Element {
-  return (
-      <div>
-         <Htag tag='h1'>Htag component</Htag>
-         <Button appearance='primary' arrow='right'>Button</Button>
-         <Button appearance='ghost' arrow='right'>Button</Button>
-         <Text size='S'>Small text</Text>
-         <Text size='M'>Medium text</Text>
-         <Text size='L'>Large text</Text>
-         <Teg color='red' href='https://google.com'>Google</Teg>
-         <Teg color='primary' href='https://youtube.com'>Youtube</Teg>
-         <Teg color='green'>Green teg</Teg>
-         <Teg color='ghost'>Ghost teg</Teg>
-      </div>
-  );
+    const [rating, setRating] = useState<number>(4);
+
+    return (
+        <div>
+            <Htag tag='h1'>Htag component</Htag>
+            <Button appearance='primary' arrow='right' >Click</Button>
+            <Button appearance='ghost' arrow='right' >Button</Button>
+            <Text size='S'>Small text</Text>
+            <Text size='M'>Medium text</Text>
+            <Text size='L'>Large text</Text>
+            <Teg color='red' href='https://google.com'>Google</Teg>
+            <Teg color='primary' href='https://youtube.com'>Youtube</Teg>
+            <Teg color='green'>Green button</Teg>
+            <Rating rating={rating} isEditable setRating={setRating} />
+        </div>
+    );
 }
