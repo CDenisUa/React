@@ -1,4 +1,4 @@
-import {DetailedHTMLProps, HTMLAttributes, ReactNode, TextareaHTMLAttributes} from "react";
+import {DetailedHTMLProps, HTMLAttributes, ReactNode} from "react";
 
 export interface TextProps extends DetailedHTMLProps<HTMLAttributes<HTMLParagraphElement>, HTMLParagraphElement>{
     children: ReactNode;
