@@ -3,16 +3,19 @@
 
 	box-sizing: border-box;
 	margin-right: 5px;
-	padding: 5px 10px;
-
 	border-radius: 20px;
 }
 
-.M {
+.s {
+	padding: 5px 10px;
+
 	font-size: 12px;
+	line-height: 12px;
 }
 
-.L {
+.m {
+	padding: 5px 10px;
+
 	font-size: 14px;
 	line-height: 14px;
 }
@@ -44,7 +47,6 @@
 
 .primary {
 	color: var(--primary);
-
-	border: 1px solid var(--primary);
 	background: none;
+	border: 1px solid var(--primary);
 }
