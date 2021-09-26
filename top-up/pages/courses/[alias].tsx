@@ -1,11 +1,11 @@
 import { GetStaticPaths, GetStaticPathsContext, GetStaticProps, GetStaticPropsContext } from 'next';
 import React, { useState } from 'react';
-import { withLayout } from '../../layout/Layout';
 import axios from 'axios';
 import { MenuItem } from '../../interfaces/menu.interface';
 import { TopPageModel } from '../../interfaces/page.interface';
 import { ParsedUrlQuery } from 'node:querystring';
 import { ProductModel } from '../../interfaces/product.interface';
+import {withLayout} from "../../Layout/Layout";
 
 const firstCategory = 0;
 
