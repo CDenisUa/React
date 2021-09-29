@@ -1,24 +1,27 @@
-import logo from './logo.svg';
-import './App.css';
+import {
+    GlobalStyle,
+    Container,
+} from './styles';
+import GlobalFonts from './fonts/fonts';
+import HeroIMG from './assets/bg asset.png';
+import HeaderTitle from "./components/header-title";
+import Header from "./components/header";
+import Main from "./components/main";
 
-function App() {
+const App = () => {
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+      <>
+          <GlobalFonts />
+          <GlobalStyle/>
+          <Container>
+              <HeaderTitle />
+              <Header />
+              <Main />
+              <img src={HeroIMG} alt={HeroIMG} />
+          </Container>
+      </>
+
   );
 }
 
