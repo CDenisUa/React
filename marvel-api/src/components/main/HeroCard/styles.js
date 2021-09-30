@@ -10,7 +10,9 @@ export const CardBlock = styled.div`
   transition: .3s;
   img {
     width: 200px;
-    min-height: 200px;
+    height: 200px;
+    max-height: 200px;
+    object-fit: cover;
   }
   h3 {
     padding-left: 15px;

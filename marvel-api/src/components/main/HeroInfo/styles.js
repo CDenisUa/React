@@ -4,6 +4,7 @@ import {SubTitle} from "../../../styles";
 export const HeroInfoContainer = styled.div`
   display: flex;
   flex-direction: column;
+  max-width: 433px;
   margin-bottom: 25px;
   padding: 25px 25px 0 25px;
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.25);
@@ -12,7 +13,7 @@ export const HeroInfoContainer = styled.div`
 
   @media screen and (min-width: 1024px) {
     margin-left: 25px;
-
+    z-index: 5;
   }
 `;
 export const HeroInfoHeaderWrap = styled.div`
@@ -42,6 +43,7 @@ export const ButtonWrap = styled.div`
   }
 `;
 export const BlockTitle = styled(SubTitle)`
+  display: block;
   text-transform: capitalize;
   font-size: 18px;
   margin: 10px 0;
@@ -56,6 +58,7 @@ export const BlockInfo = styled.div`
   font-size: 16px;
   font-family: 'DecalotypeLight',serif;
   padding: 5px 10px;
+  text-transform: none;
 `;
 
 export const HeroInfoContent = styled.div`

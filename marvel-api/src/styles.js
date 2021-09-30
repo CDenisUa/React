@@ -85,11 +85,12 @@ export const Title = styled.h2`
   font-size: 22px;
 `;
 
-export const SubTitle = styled.h3`
+export const SubTitle = styled.span`
   font-family: 'DecalotypeBlack', serif;
   font-size: 18px;
   text-transform: uppercase;
   color: ${({color}) => color};
+  margin: ${({margin}) => margin}
 `;
 
 export const Article = styled.article`

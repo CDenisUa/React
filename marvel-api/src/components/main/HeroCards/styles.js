@@ -6,7 +6,6 @@ export const CardsSection = styled.div`
   grid-gap: 30px 25px;
   align-self: center;
 
-
   @media screen and (min-width: 512px) {
     grid-template-columns: repeat(2,1fr);
     align-self: center;
@@ -22,4 +21,5 @@ export const CardsSectionWrap = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
+  width: 100%;
 `
