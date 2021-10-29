@@ -1,3 +1,3 @@
-import {getHeroFetch} from "./services";
+import { useGetHeroes } from "./services";
 
-export default getHeroFetch;
+export default useGetHeroes;

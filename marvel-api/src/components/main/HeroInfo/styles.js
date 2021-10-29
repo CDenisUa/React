@@ -13,6 +13,7 @@ export const HeroInfoContainer = styled.div`
 
   @media screen and (min-width: 1024px) {
     margin-left: 25px;
+    min-width: 433px;
     z-index: 5;
   }
 `;
@@ -22,7 +23,9 @@ export const HeroInfoHeaderWrap = styled.div`
   margin-bottom: 15px;
   
   img{
-    max-width: 150px;
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
     margin-right: 25px;
   }
 

@@ -1,41 +1,28 @@
 import HeroCard from "../HeroCard";
 import {CardsSection, CardsSectionWrap} from './styles';
 import {Button } from "../../../styles";
-import getHeroFetch from "../../../services";
-import {useEffect, useState} from "react";
+import {useContext} from "react";
+import Context from "../../../context";
 import PreLoader from "../../pre-loader";
 
 export const HeroCards = () => {
-    const [data, setData] = useState(null);
-    const [loading, setLoading] = useState(true);
-    const [countHeroes, setCountHeroes] = useState(9);
+    const {data} = useContext(Context)
 
-    useEffect(() => {
-        setData(getHeroFetch(countHeroes).then(res => {
-            setLoading(false);
-            setData(res);
-        }))
-    }, [countHeroes]);
-
-    const loadMore = () => {
-        setCountHeroes(prevState => prevState + 5)
-        setLoading(!loading);
-        setData(countHeroes);
-    }
-
-    if(loading) {
+    if(!data) {
         return <PreLoader />
     }
 
     return (
         <CardsSectionWrap>
             <CardsSection>
-                {data && data?.data?.results.map((item) => <HeroCard item={item} key={item.id}/>)}
+                {
+                    data && data.data.results.map(hero =>
+                    <HeroCard hero={hero} key={hero.id}/>)
+                }
             </CardsSection>
             <Button
                 margin='45px 0 0'
                 width='180px'
-                onClick={loadMore}
             >
                 LOAD MORE
             </Button>

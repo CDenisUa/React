@@ -15,7 +15,7 @@ export const Container = styled.div`
     position: absolute;
     right: 5px;
     bottom: 5px;
-    z-index: -1;
+    z-index: 0;
   }
 
   @media screen and (min-width: 768px) {
@@ -29,6 +29,7 @@ export const Container = styled.div`
   }
 
   @media screen and (min-width: 1280px) {
+    min-height: 1500px;
     img:last-child {
       display: inline;
     }

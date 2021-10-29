@@ -1,5 +1,4 @@
 import {Button, SubTitle, Text} from "../../../styles";
-import HeroMocIMG from '../../../assets/loki.jpg';
 import {
     HeroInfoContainer,
     HeroInfoHeader,
@@ -10,42 +9,40 @@ import {
     HeroInfoHeaderWrap,
     HeroInfoContent,
 } from './styles';
+import {useContext} from "react";
+import Context from "../../../context";
+import {makeIMG} from "../../../usefullFunctions";
+import SkeletonComponent from "../../skeleton";
 
-export const HeroInfo = () => (
-    <HeroInfoContainer>
-        <HeroInfoHeader>
-            <HeroInfoHeaderWrap>
-                <img src={HeroMocIMG} alt={HeroMocIMG}/>
-                <HeroInfoContent>
-                    <SubTitle>Loki</SubTitle>
-                    <ButtonWrap>
-                        <Button
-                            margin='10px 0'
-                        >homepage</Button>
-                        <Button>wiki</Button>
-                    </ButtonWrap>
-                </HeroInfoContent>
-            </HeroInfoHeaderWrap>
-            <Text>
-                In Norse mythology, Loki is a god or jötunn (or both). Loki is the son of Fárbauti and Laufey, and the
-                brother of Helblindi and Býleistr. By the jötunn Angrboða, Loki is the father of Hel, the wolf Fenrir,
-                and the world serpent Jörmungandr. By Sigyn, Loki is the father of Nari and/or Narfi and with the
-                stallion Svaðilfari as the father, Loki gave birth—in the form of a mare—to the eight-legged horse
-                Sleipnir. In addition, Loki is referred to as the father of Váli in the Prose Edda
-            </Text>
-        </HeroInfoHeader>
-        <HeaderInfoFooter>
-            <BlockTitle>Comics:</BlockTitle>
-            <BlockInfo>All-Winners Squad: Band of Heroes (2011) #3</BlockInfo>
-            <BlockInfo>Alpha Flight (1983) #50</BlockInfo>
-            <BlockInfo>Amazing Spider-Man (1999) #503</BlockInfo>
-            <BlockInfo>Amazing Spider-Man (1999) #504</BlockInfo>
-            <BlockInfo>AMAZING SPIDER-MAN VOL. 7: BOOK OF EZEKIEL TPB (Trade Paperback)</BlockInfo>
-            <BlockInfo>Amazing-Spider-Man: Worldwide Vol. 8 (Trade Paperback)</BlockInfo>
-            <BlockInfo>Asgardians Of The Galaxy Vol. 2: War Of The Realms (Trade Paperback)</BlockInfo>
-            <BlockInfo>Vengeance (2011) #4</BlockInfo>
-            <BlockInfo>Avengers (1963) #1</BlockInfo>
-            <BlockInfo>Avengers (1996) #1</BlockInfo>
-        </HeaderInfoFooter>
-    </HeroInfoContainer>
-)
+export const HeroInfo = () => {
+    const {choseCard, data, loading} = useContext(Context);
+    const heroData = data?.data?.results.find(element => element.id === choseCard);
+    const url = makeIMG(heroData?.thumbnail?.path,heroData?.thumbnail?.extension);
+    return (loading ? <SkeletonComponent
+            width='483px'
+            height='500px'
+            number={1} />
+        : <HeroInfoContainer>
+            <HeroInfoHeader>
+                <HeroInfoHeaderWrap>
+                    <img src={url} alt={url}/>
+                    <HeroInfoContent>
+                        <SubTitle>{heroData?.name}</SubTitle>
+                        <ButtonWrap>
+                            <Button
+                                margin='10px 0'
+                            >homepage</Button>
+                            <Button>wiki</Button>
+                        </ButtonWrap>
+                    </HeroInfoContent>
+                </HeroInfoHeaderWrap>
+                <Text>
+                    {heroData?.description}
+                </Text>
+            </HeroInfoHeader>
+            <HeaderInfoFooter>
+                <BlockTitle>Comics:</BlockTitle>
+                {heroData?.comics?.items.map((comics, index) => <BlockInfo key={index}>{comics.name}</BlockInfo>)}
+            </HeaderInfoFooter>
+        </HeroInfoContainer>)
+}

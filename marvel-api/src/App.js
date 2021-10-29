@@ -1,5 +1,3 @@
-import { createStore } from "redux";
-import { Provider } from "react-redux";
 import GlobalFonts from './fonts/fonts';
 import HeroIMG from './assets/bg asset.png';
 import HeaderTitle from "./components/header-title";
@@ -9,13 +7,29 @@ import {
     GlobalStyle,
     Container,
 } from './styles';
-import { reducer } from "./redux/reducer";
-
-let store = createStore(reducer);
+import {
+    useEffect,
+    useState,
+} from "react";
+import Context from './context';
+import useGetHeroes from "./services";
 
 const App = () => {
-  return (
-      <Provider store={store}>
+    const [context,setContext] = useState(null);
+    const [choseCard,setChoseCard] = useState(1010903);
+    const [data,loading] = useGetHeroes();
+
+    useEffect(() => {
+       setContext({
+           data,
+           loading,
+           choseCard,
+           setChoseCard,
+       })
+    }, [data,loading,choseCard,setChoseCard]);
+
+    return (
+      <Context.Provider value={{...context}}>
           <GlobalFonts />
           <GlobalStyle/>
           <Container>
@@ -24,7 +38,7 @@ const App = () => {
               <Main />
               <img src={HeroIMG} alt={HeroIMG} />
           </Container>
-      </Provider>
+      </Context.Provider>
 
   );
 }
