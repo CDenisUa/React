@@ -1,10 +1,10 @@
 import { Redirect } from "react-router-dom";
 import { useAuth } from "../hooks/useAuth";
-import { useDispatch } from "react-redux";
 import { removeUser } from "../store/slices/userSlice";
+import { useAppDispatch } from '../hooks/redux-hooks';
 
 export const HomePage = () => {
-    const dispatch = useDispatch();
+    const dispatch = useAppDispatch();
     const {isAuth, email} = useAuth();
 
     return isAuth ? (
