@@ -17,3 +17,14 @@
     <img src="./README-IMAGES/job_listings_with_filtering.png">
 </a>
 
+### Marvel Api
+
+> React application in which the main goal was 
+> to learn how to work with the API fetch in a 
+> React application. Practice the Styled Component 
+> approach. Experiment with developing an 
+> application without a state manager.
+
+<a href="https://youtu.be/VM3WE4hsw0U">
+    <img src="./README-IMAGES/Marvel-API.png">
+</a>
