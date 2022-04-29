@@ -3,7 +3,7 @@ import { useDispatch } from 'react-redux';
 import { FilterPanel } from './components/FilterPanel';
 import { JobList } from './components/JobList';
 import { TheHeader } from './components/TheHeader';
-import { addPositions } from './redux/positions/position-action';
+import { addPositions } from './store/positions/position-action';
 import data from './mock/data.json';
 
 function App() {
