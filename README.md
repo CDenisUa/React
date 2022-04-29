@@ -13,4 +13,4 @@ This is a repository with all my tutorials on react
 > how Redux works and use it as a storage of 
 > some logic and data.
 
-   
+<iframe width="560" height="315" src="https://www.youtube.com/embed/9VIPbm9x5go" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
