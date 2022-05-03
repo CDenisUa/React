@@ -1,22 +1,27 @@
+// Core
 import styled from 'styled-components';
-import {useEffect} from 'react';
+import { useEffect } from 'react';
+import { useDispatch, useSelector } from "react-redux";
 import { Link } from 'react-router-dom';
 import { IoMoon, IoMoonOutline } from 'react-icons/io5';
 
+// Components
 import { Container } from './Container';
 
+// Redux-store
+import { setTheme } from "../store/theme/theme-reducer";
+
+// Styles
 const HeaderEl = styled.header`
   box-shadow: var(--shadow);
   background-color: var(--colors-ui-base);
 `;
-
 const Wrapper = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 2rem 0;
 `;
-
 const Title = styled(Link).attrs({
   to: '/',
 })`
@@ -25,17 +30,22 @@ const Title = styled(Link).attrs({
   text-decoration: none;
   font-weight: var(--fw-bold);
 `;
-
 const ModeSwitcher = styled.div`
   color: var(--colors-text);
   font-size: var(--fs-sm);
   cursor: pointer;
-  // font-weight: var(--fw-bold);
   text-transform: capitalize;
 `;
 
+// Component Header
 export const Header = () => {
-  const theme = 'light';
+  const dispatch = useDispatch();
+  const theme = useSelector(state => state.theme);
+  const themeSetting = theme === 'light' ? 'dark' : 'light';
+
+  const toggleTheme = () => {
+    dispatch(setTheme(themeSetting))
+  }
 
   useEffect(() => {
     document.body.setAttribute('data-theme', theme);
@@ -46,7 +56,7 @@ export const Header = () => {
       <Container>
         <Wrapper>
           <Title>Where is the world?</Title>
-          <ModeSwitcher>
+          <ModeSwitcher onClick={toggleTheme}>
             {theme === 'light' ? (
               <IoMoonOutline size="14px" />
             ) : (
