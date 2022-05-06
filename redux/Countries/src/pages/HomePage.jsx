@@ -4,8 +4,9 @@ import {useNavigate} from 'react-router-dom';
 
 // Redux
 import {useDispatch, useSelector} from "react-redux";
-import {selectAllCountries, selectCountriesInfo} from "../store/countries/countries-selectors";
+import {selectAllCountries, selectCountriesInfo, selectVisibleCountries} from "../store/countries/countries-selectors";
 import {loadCountries} from "../store/countries/countries-actions";
+import {selectSearch} from "../store/controls/controls-selectors";
 
 // Components
 import {List} from '../components/List';
@@ -14,7 +15,8 @@ import {Controls} from '../components/Controls';
 
 export const HomePage = () => {
     const dispatch = useDispatch();
-    const countries = useSelector(selectAllCountries);
+    const search = useSelector(selectSearch);
+    const countries = useSelector(state => selectVisibleCountries(state, { search }));
     const {status, error, qty} = useSelector(selectCountriesInfo);
     const navigate = useNavigate();
 
