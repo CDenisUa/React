@@ -10,6 +10,7 @@ import { Container } from './Container';
 
 // Redux-store
 import { setTheme } from "../store/theme/theme-reducer";
+import {clearControls} from "../store/controls/controls-actions";
 
 // Styles
 const HeaderEl = styled.header`
@@ -43,6 +44,8 @@ export const Header = () => {
   const theme = useSelector(state => state.theme);
   const themeSetting = theme === 'light' ? 'dark' : 'light';
 
+  const cleanUp = () => dispatch(clearControls());
+
   const toggleTheme = () => {
     dispatch(setTheme(themeSetting))
   }
@@ -55,7 +58,7 @@ export const Header = () => {
     <HeaderEl>
       <Container>
         <Wrapper>
-          <Title>Where is the world?</Title>
+          <Title onClick={cleanUp}>Where is the world?</Title>
           <ModeSwitcher onClick={toggleTheme}>
             {theme === 'light' ? (
               <IoMoonOutline size="14px" />

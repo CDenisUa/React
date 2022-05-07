@@ -12,6 +12,7 @@ const optionsMap = {
   'Europe': { value: 'Europe', label: 'Europe' },
   'Oceania': { value: 'Oceania', label: 'Oceania' },
 }
+
 const options = Object.values(optionsMap);
 
 const Wrapper = styled.div`
