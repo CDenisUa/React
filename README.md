@@ -4,9 +4,9 @@
 
 -------------------
 
-## *Redux folder*
+### /Redux folder
 
-### Job listings with filtering
+## *Job listings with filtering*
 
 > This is not a big project that uses react 
 > together with the Redux library. The project 
