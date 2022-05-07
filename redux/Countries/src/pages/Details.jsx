@@ -6,7 +6,7 @@ import {IoArrowBack} from 'react-icons/io5';
 // Redux
 import {useDispatch, useSelector} from "react-redux";
 import {selectDetails} from "../store/details/detaills-selector";
-import {loadCountryByName} from "../store/details/details-actions";
+import {clearDetails, loadCountryByName} from "../store/details/details-actions";
 
 // Components
 import {Button} from '../components/Button';
@@ -21,6 +21,9 @@ export const Details = () => {
 
     useEffect(() => {
         dispatch(loadCountryByName(name));
+        return () => {
+            dispatch(clearDetails())
+        };
     }, [name, dispatch])
 
     return (
