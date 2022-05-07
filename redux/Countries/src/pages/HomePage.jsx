@@ -4,9 +4,9 @@ import {useNavigate} from 'react-router-dom';
 
 // Redux
 import {useDispatch, useSelector} from "react-redux";
-import {selectAllCountries, selectCountriesInfo, selectVisibleCountries} from "../store/countries/countries-selectors";
+import {selectCountriesInfo, selectVisibleCountries} from "../store/countries/countries-selectors";
 import {loadCountries} from "../store/countries/countries-actions";
-import {selectSearch} from "../store/controls/controls-selectors";
+import {selectControls } from "../store/controls/controls-selectors";
 
 // Components
 import {List} from '../components/List';
@@ -15,18 +15,18 @@ import {Controls} from '../components/Controls';
 
 export const HomePage = () => {
     const dispatch = useDispatch();
-    const search = useSelector(selectSearch);
-    const countries = useSelector(state => selectVisibleCountries(state, { search }));
+    const { search, region } = useSelector(selectControls);
+    const countries = useSelector(state => selectVisibleCountries(state, { search, region }));
     const {status, error, qty} = useSelector(selectCountriesInfo);
     const navigate = useNavigate();
 
     useEffect(() => {
-        dispatch(loadCountries())
+        if (!qty) dispatch(loadCountries());
     }, [qty, dispatch])
 
     return (
         <>
-            <Controls/>
+            <Controls />
             {error && <h2>Can't fetch data</h2>}
             {status === 'loading' && <h2>Loading...</h2>}
             {status === 'received' && (
