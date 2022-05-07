@@ -102,6 +102,21 @@ export const Info = (props) => {
     push,
   } = props;
 
+  console.dir({
+    name,
+    nativeName,
+    flag,
+    capital,
+    population,
+    region,
+    subregion,
+    topLevelDomain,
+    currencies,
+    languages,
+    borders,
+    push,
+  })
+
   return (
     <Wrapper>
       <InfoImage src={flag} alt={name} />
@@ -129,19 +144,19 @@ export const Info = (props) => {
           <List>
             <ListItem>
               <b>Top Level Domain</b>{' '}
-              {topLevelDomain.map((d) => (
+              {topLevelDomain?.map((d) => (
                 <span key={d}>{d}</span>
               ))}
             </ListItem>
             <ListItem>
               <b>Currency</b>{' '}
-              {currencies.map((c) => (
+              {currencies?.map((c) => (
                 <span key={c.code}>{c.name} </span>
               ))}
             </ListItem>
             <ListItem>
               <b>Top Level Domain</b>{' '}
-              {languages.map((l) => (
+              {languages?.map((l) => (
                 <span key={l.name}>{l.name}</span>
               ))}
             </ListItem>
