@@ -1,4 +1,5 @@
 // Core
+import { useStateContext } from './contexts/ContextProvider';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { FiSettings } from 'react-icons/fi';
 import { TooltipComponent } from '@syncfusion/ej2-react-popups';
@@ -11,7 +12,8 @@ ColorMapping, Editor, Line } from './pages';
 import './App.css';
 
 const App = () => {
-  const activeMenu = true;
+  const { activeMenu } = useStateContext();
+
   return (
     <div>
       <BrowserRouter>
