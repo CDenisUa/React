@@ -7,15 +7,19 @@ import { Stacked, Pie, Button, SparkLine } from '../components';
 // Images
 import { BSCurrencyDollar } from 'react-icons/bs';
 import { GoPrimitiveDot } from 'react-icons/go';
-import { SparklineAreaData } from 'react-icons/go';
 // Data
-import { ecomPieChartDat, earningData } from '../data/dummy';
+import { ecomPieChartDat, earningData, SparklineAreaData } from '../data/dummy';
 
 const Ecommerce = () => {
   return (
     <div className='mt-12'> 
+      {/* Header blocks start */}
+
       <div className='flex flex-wrap
       lg:flex-nowrap justify-center'>
+
+        {/* Earnings block start */}
+
         <div className='bg-white 
         dark:text-gray-200
         dark:bg-secondary-dark-bg h-44
@@ -38,8 +42,12 @@ const Ecommerce = () => {
               size='md'
             />
           </div>
+        </div>
 
-          <div className='flex m-3 flex-wrap
+        {/* Earnings block end */}
+        {/* Map blocks Customer, Products, Sales, Refunds start */}
+
+        <div className='flex m-3 flex-wrap
           justify-center gap-1 items-center'>
             { earningData.map(item => (
               <div key={item.title}
@@ -72,9 +80,14 @@ const Ecommerce = () => {
               </div>
             ))}
           </div>
-        </div>
-        
+
+        {/* Map blocks Customer, Products, Sales, Refunds start */}
+
       </div>
+      
+      {/* Header blocks end */}
+      {/* Footer blocks start */}
+
       <div className='flex gap-10 flex-wrap
       justify-center'>
         <div className='bg-white
@@ -130,11 +143,23 @@ const Ecommerce = () => {
                   </p>
                   <p className='text-gray-500 mt-10'>Expense</p>
                 </div>
+                <div className='mt-5'>
+                  <SparkLine 
+                    currentColor='blue'
+                    id='line-sparkline'
+                    type='Line'
+                    height='80px'
+                    width='250px'
+                    data={SparklineAreaData}
+                    color='blue'
+                  />
+                </div>
               </div>
             </div>
         </div>
 
       </div>
+      {/* Footer blocks end */}
     </div>
   )
 }
