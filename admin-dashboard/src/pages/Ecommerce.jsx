@@ -170,7 +170,7 @@ const Ecommerce = () => {
             {/* Right block with diagram - start */}
             <div>
               <Stacked 
-                width='320000px' 
+                width='3200000px' 
                 height='360px'
               />
             </div>
