@@ -4,9 +4,9 @@
 
 -------------------
 
-### /Redux folder
-
 ## *Job listings with filtering*
+
+### /redux/job_listings_with_filtering
 
 > This is not a big project that uses react 
 > together with the Redux library. The project 
@@ -34,6 +34,8 @@
 
 ## *Marvel Api*
 
+### /marvel-api
+
 > React application in which the main goal was 
 > to learn how to work with the API fetch in a 
 > React application. Practice the Styled Component 
@@ -60,6 +62,9 @@
 -------------------
 
 ## *Countries*
+
+### /redux/countries
+
 
 > React application using Redux in its classic 
 > form using middleware as redux-thunk. 
