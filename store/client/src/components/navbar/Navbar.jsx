@@ -7,6 +7,8 @@ import SearchIcon from '@mui/icons-material/Search';
 // import PersonOutlineOutlinedIcon from '@mui/icons-material/PersonOutlineOutlined';
 // import FavoriteBorderOutlinedIcon from '@mui/icons-material/FavoriteBorderOutlined';
 // import ShoppingCartOutlinedIcon from '@mui/icons-material/ShoppingCartOutlined';
+// Styles
+import './Navbar.scss';
 
 const Navbar = () => {
   return (
