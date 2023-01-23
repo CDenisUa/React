@@ -3,12 +3,14 @@ import React from 'react';
 // Styles
 import './Home.scss';
 // Components
-import { Slider } from 'components';
+import { FeaturedProducts, Slider } from 'components';
 
 const Home = () => {
   return (
     <div className='home'>
       <Slider />
+      <FeaturedProducts type='featured' />
+      <FeaturedProducts type='trending' />
     </div>
   )
 }
