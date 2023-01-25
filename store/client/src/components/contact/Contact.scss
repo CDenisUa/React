@@ -1,0 +1,55 @@
+.contact {
+    background: $blue;
+    color: $white;
+    padding: 15px;
+
+    .wrapper {
+        width: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin: 0 auto;
+    }
+
+    input {
+        padding: 10px;
+        border: none;
+        border-radius: 5px 0 0 5px;
+    }
+
+    button {
+        padding: 10px;
+        color: $white;
+        border-radius: 0 5px 5px 0;
+        border: none;
+        margin-left: 1px;
+        background-color: $black;
+        cursor: pointer;
+    }
+
+    .icons {
+        display: flex;
+        gap: 10px;
+    }
+
+    .icons > svg {
+        transition: all .3s ease-in-out;
+        fill: $white;
+        cursor: pointer;
+    }
+
+    .facebook:hover {
+        fill: blue ;
+    }
+
+    .instagram:hover,
+    .pinterest:hover {
+        fill: $red;
+    }
+    .twitter:hover {
+        fill: $silver;
+    }
+    .google:hover {
+        fill: $green;
+    }
+}
