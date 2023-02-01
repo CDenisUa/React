@@ -8,10 +8,10 @@ const Contact = () => {
   return (
     <div className='contact'>
         <div className="wrapper">
-            <span>BE IN TOUCH WITH US:</span>
+            <span className='format-text'>BE IN TOUCH WITH US:</span>
             <div className="mail">
-                <input type="text" placeholder="Enter your e-mail..." />
-                <button>JOIN US</button>
+                <input className='format-text' type="text" placeholder="Enter your e-mail..." />
+                <button className='format-text'>JOIN US</button>
             </div>
             <div className="icons">
                 <Facebook className='facebook' />

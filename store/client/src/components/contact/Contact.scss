@@ -53,3 +53,11 @@
         fill: $green;
     }
 }
+
+.format-text {
+    @extend %brat-styles;
+}
+
+input.format-text::placeholder {
+    font-size: 12px;
+}

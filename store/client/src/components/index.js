@@ -6,3 +6,4 @@ export { default as FeaturedProducts } from './featured-products/FeaturedProduct
 export { default as Card } from './card/Card';
 export { default as Categories } from './categories/Categories';
 export { default as Contact } from './contact/Contact';
+export { default as List } from './list/List';
