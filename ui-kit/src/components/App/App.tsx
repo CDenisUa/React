@@ -1,5 +1,5 @@
 // Components
-import UIKit from '@/ui';
+import UIKit from '@/components/uikit/UIKit';
 // Styles
 import './App.css'
 
