@@ -1,9 +1,12 @@
 // Core
-import React, { FC } from "react";
+import { FC } from 'react';
 // Components
+import { Image } from '@/ui';
 
-const UIKit: FC = () => {
-    return <>UI Kit component</>
-}
+const UIKit: FC = () => (
+    <div>
+        <Image src="/vite.svg" />
+    </div>
+);
 
 export default UIKit;
