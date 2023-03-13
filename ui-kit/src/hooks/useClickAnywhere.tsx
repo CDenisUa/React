@@ -39,7 +39,10 @@ const useClickAnywhere = (): [boolean, RefObject<HTMLDivElement | null>] => {
 export default useClickAnywhere;
 
 // How to use hook
-//
+// Body of component:
 // const [ clickOutSide, drawingToolsRef ] = useClickAnywhere();
+// useEffect(() => {
 // if(clickOutSide) setOpenDrawingTools(false);
+// },[clickOutSide])
+//  JSX:
 // <div ref={drawingToolsRef}> some code </div>
