@@ -1,14 +1,8 @@
-// Components
-import UIKit from '@/components/uikit/UIKit';
+// Core
+import { Link } from 'react-router-dom';
 // Styles
 import './App.css';
 
-function App() {
-    return (
-        <div className="App">
-            <UIKit />
-        </div>
-    );
-}
+const App = () => <Link to="/react-query">React router</Link>;
 
 export default App;
