@@ -1,0 +1,17 @@
+#controlled-form {
+    padding: 0 20px;
+    font-size: 18px;
+}
+
+.form-label {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-container {
+    display: flex;
+}
+
+.result {
+    padding: 80px 120px 0;
+}
