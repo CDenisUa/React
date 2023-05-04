@@ -102,4 +102,30 @@
 
 -------------------
 
+-------------------
+
+# *Employees*
+
+### /employees
+
+## *Useful commands:*
+
+*- Open Prisma studio with all data*
+
+```
+npx prisma studio 
+```
+
+
+*Libraries that are used in the project:*
+
+
+```
+"dependencies": {
+   
+  }
+```
+
+-------------------
+
 
