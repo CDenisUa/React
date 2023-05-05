@@ -11,28 +11,32 @@ const secret = process.env.JWT_SECRET;
 */
 
 const login = async (req, res,) => {
-    const { email, password } = req.body;
-    if(!email || !password) {
-        return  res.status(400).json({message: "Please fill out the required fields."})
-    }
+    try {
+      const { email, password } = req.body;
+      if(!email || !password) {
+          return  res.status(400).json({message: "Please fill out the required fields."})
+      }
     
-    const user = await prisma.user.findFirst({
-        where: {
-            email,
-        }
-    });
+      const user = await prisma.user.findFirst({
+          where: {
+              email,
+          }
+      });
 
-    const isPasswordCorrect = user && (await bcrypt.compare(password, user.password));
+      const isPasswordCorrect = user && (await bcrypt.compare(password, user.password));
 
-    if(user && isPasswordCorrect && secret) {
-        res.status(200).json({
-            id: user.id,
-            email: user.email,
-            name: user.name,
-            token:  jwt.sign({ id: user.id }, secret, { expiresIn: "30d" })
-        });
-    } else {
-        return res.status(400).json('Wrong login or password!')
+      if(user && isPasswordCorrect && secret) {
+          res.status(200).json({
+              id: user.id,
+              email: user.email,
+              name: user.name,
+              token:  jwt.sign({ id: user.id }, secret, { expiresIn: "30d" })
+          });
+      } else {
+          return res.status(400).json('Wrong login or password!')
+      }
+    } catch {
+      res.status(400).json({ message: 'Something went wrong!'})
     }
 }
 /**
@@ -42,6 +46,7 @@ const login = async (req, res,) => {
 */
 
 const register = async (req, res) => {
+  try {
     const { email, password, name } = req.body;
   
     if (!email && !password && !name) {
@@ -88,6 +93,11 @@ const register = async (req, res) => {
     } else {
       return res.status(400).json({ message: "Failed to create user" });
     }
+
+  } catch {
+      res.status(400).json({ message: 'Something went wrong!'})
+  }
+    
 };
 
 /**
@@ -97,7 +107,11 @@ const register = async (req, res) => {
 */
 
 const current = async (req, res,) => {
+  try{
     return res.status(200).json(req.user);
+  } catch {
+    res.status(400).json({ message: 'Something went wrong!'})
+  }
 }
 
 module.exports = {

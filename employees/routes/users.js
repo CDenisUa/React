@@ -1,7 +1,14 @@
+// Core
 const express = require('express');
 const router = express.Router();
-const { login, register, current } = require('../controllers/users');
+// Middleware
 const { auth } = require('../middleware/auth');
+// Controllers
+const { 
+    login, 
+    register, 
+    current 
+} = require('../controllers/users');
 
 /* api/user/login */
 router.post('/login', login);
