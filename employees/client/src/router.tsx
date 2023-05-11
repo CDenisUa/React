@@ -5,7 +5,7 @@ import { Login } from './pages';
 // Components
 import { App } from '@/components';
 
-const Paths = {
+export const Paths = {
     home: '/',
     login: '/login',
     register: '/register',

@@ -1,0 +1,12 @@
+.header {
+    display: flex;
+    justify-content: space-around;
+    padding: 20px 0;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.team-icon {
+    font-size: 26px;
+    margin-right: 12px;
+}
