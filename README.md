@@ -128,4 +128,13 @@ npx prisma studio
 
 -------------------
 
+# Info:
+```
+lsof -i :8000
+kill [PID]
+
+```
+- View the process on port 8000*
+- release the process
+
 
