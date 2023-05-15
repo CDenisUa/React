@@ -20,7 +20,7 @@ const Login: FC = () => {
         >
           <Card title="Log in" style={{ width: "30rem" }}>
             <Form onFinish={() => null}>
-              <Input type="email" name="email" placeholder="Email" />
+              <Input isFocus type="email" name="email" placeholder="Email" />
               <PasswordInput name="password" placeholder="Password" />
               <Button type="primary" htmlType="submit">
                 Log In

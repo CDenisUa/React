@@ -1,7 +1,9 @@
 // Core
-import { FC } from "react";
+import { FC, useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
-import { Row, Card, Form, Space, Typography } from "antd";
+import { Row, Card, Form, Typography } from "antd";
+// Types
+import type { InputRef } from "antd";
 // Styles
 import styles from "./Register.module.css";
 // Components
@@ -9,29 +11,37 @@ import { Layout, Header, Input, PasswordInput, Button } from "@/components";
 import { Paths } from "@/router";
 
 const Register: FC = () => {
+  const inputRef = useRef<InputRef>(null);
+
+  useEffect(() => {
+    inputRef.current?.focus({
+      cursor: "start",
+    });
+  });
   return (
     <>
       <Header />
       <Layout>
         <Row align="middle" justify="center">
-          <Card title="Log in" style={{ width: "30rem" }}>
+          <Card title="Register" style={{ width: "30rem" }}>
             <Form onFinish={() => null}>
-              <Input name="name" placeholder="Name" />
+              <Input isFocus name="name" placeholder="Name" />
               <Input type="email" name="email" placeholder="Email" />
               <PasswordInput name="password" placeholder="Password" />
               <PasswordInput
                 name="confirm-password"
-                placeholder="Repeat the password"
+                placeholder="Confirm password"
               />
-              <Row  justify='space-between' align="middle">
-                <Button type="primary">
-                    Cancel
-                </Button>
-                <Button type="primary" htmlType="submit">
-                  Registration
-                </Button>
-              </Row>
+              <Button type="primary" htmlType="submit">
+                Registration
+              </Button>
             </Form>
+            <Typography.Text>
+              <span className={styles["register"]}>
+                Have you already registered?
+              </span>
+              <Link to={Paths.login}>Log In</Link>
+            </Typography.Text>
           </Card>
         </Row>
       </Layout>
