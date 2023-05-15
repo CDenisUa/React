@@ -22,11 +22,11 @@ const Header: FC = () => {
         </Link>
       </Space>
       <Space>
-        <Link to={Paths.login}>
-          <Button type="ghost" icon={ <UserOutlined /> } >Register</Button>
+        <Link to={Paths.register}>
+          <Button className={styles['button-link']} type="ghost" icon={ <UserOutlined /> } >Register</Button>
         </Link>
         <Link to={Paths.login}>
-          <Button type="ghost" icon={ <LoginOutlined /> }>Log In</Button>
+          <Button className={styles['button-link']} type="ghost" icon={ <LoginOutlined /> }>Log In</Button>
         </Link>
       </Space>
     </Layout.Header>

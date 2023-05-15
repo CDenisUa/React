@@ -10,3 +10,11 @@
     font-size: 26px;
     margin-right: 12px;
 }
+
+.button-link {
+    cursor: pointer;
+}
+
+.button-link:hover {
+    color: azure;
+}

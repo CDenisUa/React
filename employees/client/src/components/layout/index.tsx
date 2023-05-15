@@ -9,7 +9,7 @@ import { LayoutPropTypes } from './Layout.types';
 const Layout: FC<LayoutPropTypes> = ({ children }) => {
     return (
         <div className={styles['main']}>
-            <AntLayout.Content style={{ height: '100%' }}>
+            <AntLayout.Content>
                 { children }
             </AntLayout.Content>
         </div>
