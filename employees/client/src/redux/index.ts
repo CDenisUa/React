@@ -3,6 +3,8 @@ import { configureStore, ThunkAction, Action } from "@reduxjs/toolkit";
 import { api } from './services/api';
 // Reducers
 import auth from './slice/auth/authSlice';
+// Middleware
+import { listenerMiddleware } from "./middleware/auth";
 
 export const store = configureStore({
     reducer: {
@@ -10,7 +12,7 @@ export const store = configureStore({
         auth,
     },
     devTools: true,
-    middleware: (getDefaultMiddleware) => getDefaultMiddleware().concat(api.middleware)
+    middleware: (getDefaultMiddleware) => getDefaultMiddleware().concat(api.middleware).prepend(listenerMiddleware.middleware)
 });
 
 export type AppDispatch = typeof store.dispatch;

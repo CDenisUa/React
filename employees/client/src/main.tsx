@@ -9,12 +9,16 @@ import { Provider } from "react-redux";
 import { store } from '@/redux';
 // Styles
 import '@/styles/main.css';
+// Components
+import { Auth } from './components';
 
 ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
     <React.StrictMode>
         <Provider store={store}>
             <ConfigProvider theme={{algorithm: theme.darkAlgorithm}}>
-                <RouterProvider router={router} />
+                <Auth>
+                    <RouterProvider router={router} />
+                </Auth>
             </ConfigProvider>
         </Provider>
     </React.StrictMode>
