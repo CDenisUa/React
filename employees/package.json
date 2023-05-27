@@ -7,7 +7,10 @@
     "start": "concurrently \"npm run server\" \"npm run client\"",
     "install-all": "concurrently \"npm install --prefix api\" \"npm install --prefix client\"",
     "client": "cd client && npm run dev",
-    "server": "cd api && npm run server"
+    "server": "cd api && npm run server",
+    "test": "concurrently \"npm run test-client\" \"npm run test-api\"",
+    "test-client": "",
+    "test-api": ""
   },
   "keywords": [],
   "author": "",
