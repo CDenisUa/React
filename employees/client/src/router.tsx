@@ -1,9 +1,7 @@
 // Core
 import { createBrowserRouter } from 'react-router-dom';
 // Pages
-import { Login, Register } from './pages';
-// Components
-import { App } from '@/components';
+import { LoginPage, RegisterPage, EmployeesPage } from './pages';
 
 export const Paths = {
     home: '/',
@@ -18,14 +16,14 @@ export const Paths = {
 export const router = createBrowserRouter([
     {
         path: Paths.home,
-        element: <App />,
+        element: <EmployeesPage />,
     },
     {
         path: Paths.login,
-        element: <Login />,
+        element: <LoginPage />,
     },
     {
         path: Paths.register,
-        element: <Register />,
+        element: <RegisterPage />,
     },
 ]);

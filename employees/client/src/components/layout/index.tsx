@@ -4,7 +4,7 @@ import { Layout as AntLayout } from 'antd';
 // Styles
 import styles from './Layout.module.css';
 // Types
-import { LayoutPropTypes } from './Layout.types';
+import { LayoutPropTypes} from './Layout.types';
 
 const Layout: FC<LayoutPropTypes> = ({ children }) => {
     return (

@@ -1,2 +1,3 @@
-export { default as Login } from './login';
-export { default as Register } from './register';
+export { default as LoginPage } from './login';
+export { default as RegisterPage } from './register';
+export { default as EmployeesPage } from './employees';

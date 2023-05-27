@@ -1,7 +1,8 @@
 // API
 import { api } from '../api';
 // Types
-import { UserData, ResponseLoginData } from './auth.types';
+import {  ResponseLoginData } from './auth.types';
+import { UserData } from '@/types';
 
 export const authApi = api.injectEndpoints({
     endpoints: (builder) => ({
