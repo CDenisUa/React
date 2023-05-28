@@ -4,3 +4,4 @@ export { default as EmployeesPage } from './employees';
 export { default as AddEmployeePage } from './add-employee';
 export { default as StatusPage } from './status';
 export { default as EmployeePage } from './employee';
+export { default as EditEmployeePage } from './edit-employee';

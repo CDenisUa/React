@@ -9,6 +9,7 @@ import {
     StatusPage,
     EmployeePage
 } from './pages';
+import EditEmployee from './pages/edit-employee';
 
 export const Paths = {
     home: '/',
@@ -44,5 +45,9 @@ export const router = createBrowserRouter([
     {
         path: `${Paths.employee}/:id`,
         element: <EmployeePage />,
+    },
+    {
+        path: `${Paths.employeeEdit}/:id`,
+        element: <EditEmployee />,
     },
 ]);
