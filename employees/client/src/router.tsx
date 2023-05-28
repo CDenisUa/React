@@ -1,7 +1,13 @@
 // Core
 import { createBrowserRouter } from 'react-router-dom';
 // Pages
-import { LoginPage, RegisterPage, EmployeesPage } from './pages';
+import { 
+    LoginPage, 
+    RegisterPage, 
+    EmployeesPage, 
+    AddEmployeePage, 
+    StatusPage
+} from './pages';
 
 export const Paths = {
     home: '/',
@@ -25,5 +31,13 @@ export const router = createBrowserRouter([
     {
         path: Paths.register,
         element: <RegisterPage />,
+    },
+    {
+        path: Paths.employeeAdd,
+        element: <AddEmployeePage />,
+    },
+    {
+        path: `${Paths.status}/:status`,
+        element: <StatusPage />,
     },
 ]);

@@ -18,9 +18,7 @@ const Employees: FC = () => {
     const user = useSelector(selectUser);
     const { data, isLoading } = useGetAllEmployeesQuery();
 
-    const AddEmployeeHandle = () => {
-
-    }
+    const addEmployeeHandle = () => navigate(Paths.employeeAdd);
 
     useEffect(() => {
         if(!user) navigate('/login')
@@ -32,7 +30,7 @@ const Employees: FC = () => {
             <Button 
                 type='primary'
                 icon={ <PlusCircleOutlined /> }
-                onClick={AddEmployeeHandle}
+                onClick={addEmployeeHandle}
             > 
                 Add Employee 
             </Button>
@@ -48,7 +46,6 @@ const Employees: FC = () => {
                     }
                 }}
             >
-                
             </Table>
         </Layout>
     )
