@@ -97,19 +97,19 @@ const removeEmployee = async (req, res) => {
 */
 
 const updateEmployee = async (req, res) => {
-  try {
-    const data = req.body;
-    const id = data.id;
+  const data = req.body;
+  const id = data.id;
 
+  try {
     await prisma.employee.update({
       where: {
         id,
       },
-      data: data,
+      data,
     });
 
-    res.status(204);
-  } catch {
+    res.status(204).json("Employee updated successfully");
+  } catch(error) {
     res.status(500).json({ message: "Something went wrong!" });
   }
 };

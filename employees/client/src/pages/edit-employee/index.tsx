@@ -31,16 +31,17 @@ const EditEmployee: FC = () => {
         ...data,
         ...employee,
       };
-
+      
       await editEmployee(editedEmployee).unwrap();
       navigate(`${Paths.status}/updated`);
+
     } catch (error) {
-      const maybeError = isErrorMessage(error);
-      if (maybeError) {
-        setError(error.data.message);
-      } else {
-        setError("Unknown error!");
-      }
+        const maybeError = isErrorMessage(error);
+        if (maybeError) {
+            setError(error.data.message);
+        } else {
+            setError("Unknown error!");
+        }
     }
   };
 
