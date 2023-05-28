@@ -33,8 +33,6 @@ const Login: FC = () => {
   }
 
   return (
-    <>
-      <Header />
       <Layout>
         <Row
           className={styles["login-container"]}
@@ -60,9 +58,7 @@ const Login: FC = () => {
             </Space>
           </Card>
         </Row>
-      </Layout>
-    </>
-  );
+      </Layout>)
 };
 
 export default Login;

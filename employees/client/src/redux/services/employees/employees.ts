@@ -23,13 +23,13 @@ export const employeesAPI = api.injectEndpoints({
             method: 'PUT'
             })
         }),
-       removeEmployee: builder.mutation<string, string>({
-        query: (id) => ({
-            url: `/employees/remove/${id}`,
-            method: 'POST',
-            body: { id }
-            })
-        }),
+        removeEmployee: builder.mutation<string, string>({
+            query: (id) => ({
+              url: `/employees/remove/${id}`,
+              method: "DELETE",
+              body: { id },
+            }),
+          }),
        addEmployee: builder.mutation<Employee, Employee>({
         query: (employee) => ({
             url: `/employees/add`,

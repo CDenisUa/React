@@ -15,7 +15,8 @@ const EmployeeForm: FC<EmployeePropTypes<Employee>> = (props) => {
         title,
         btnText,
         error,
-        employee
+        employee,
+        onCancel
      } = props;
 
     return (
@@ -52,6 +53,9 @@ const EmployeeForm: FC<EmployeePropTypes<Employee>> = (props) => {
                     <ErrorMessage message={error} />
                     <Button htmlType='submit'>
                         {btnText}
+                    </Button>
+                    <Button htmlType='button' onClick={onCancel}>
+                        Cancel
                     </Button>
                 </Space>
             </Form>

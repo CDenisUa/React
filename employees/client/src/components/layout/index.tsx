@@ -5,10 +5,13 @@ import { Layout as AntLayout } from 'antd';
 import styles from './Layout.module.css';
 // Types
 import { LayoutPropTypes} from './Layout.types';
+// Components
+import Header from '../header';
 
 const Layout: FC<LayoutPropTypes> = ({ children }) => {
     return (
         <div className={styles['main']}>
+            <Header />
             <AntLayout.Content>
                 { children }
             </AntLayout.Content>

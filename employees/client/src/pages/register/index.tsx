@@ -19,8 +19,6 @@ const Register: FC = () => {
     });
   });
   return (
-    <>
-      <Header />
       <Layout>
         <Row align="middle" justify="center">
           <Card title="Register" style={{ width: "30rem" }}>
@@ -44,8 +42,7 @@ const Register: FC = () => {
             </Typography.Text>
           </Card>
         </Row>
-      </Layout>
-    </>
+      </Layout> 
   );
 };
 

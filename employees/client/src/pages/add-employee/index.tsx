@@ -1,6 +1,6 @@
 // Core
 import { FC, useEffect, useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { redirect, useNavigate } from 'react-router-dom';
 import { Row } from 'antd';
 import { useSelector } from 'react-redux';
 import { Paths } from '@/router';
@@ -38,13 +38,14 @@ const AddEmployee: FC = () => {
         }
     }
 
+    const cancelAddHandle = () => navigate('/')
+
     useEffect(() => {
         if(!user) navigate('/login')
     }, [navigate, user])
 
     return (
         <Layout>
-            <Header />
             <Row 
                 align='middle' 
                 justify='center'
@@ -54,6 +55,7 @@ const AddEmployee: FC = () => {
                     title='Add employee'
                     btnText='Add'
                     onFinish={addEmployeeHandle}
+                    onCancel={cancelAddHandle}
                     error={error}
                 />
             </Row>

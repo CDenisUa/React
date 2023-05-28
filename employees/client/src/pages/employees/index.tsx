@@ -26,7 +26,6 @@ const Employees: FC = () => {
     
     return (
         <Layout>
-            <Header />
             <Button 
                 type='primary'
                 icon={ <PlusCircleOutlined /> }
