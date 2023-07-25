@@ -10,7 +10,7 @@ export interface UserData {
     email: string;
     password: string;
     name: string;
-};
+}
 
 export interface Employee {
     id: string;
